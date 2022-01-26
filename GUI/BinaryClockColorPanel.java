@@ -5,6 +5,8 @@ import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+// Make sure to import javax.imageio.ImageIO and java.io.File
+
 public class BinaryClockColorPanel extends JPanel {
     /**
      * @param num
