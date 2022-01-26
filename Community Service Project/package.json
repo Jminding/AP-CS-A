@@ -40,9 +40,12 @@
       "parser": "babel-eslint"
     },
     "rules": {
-      "Vue/no unused components": ["error", {
-        "ignoreWhenBindingPresent": true
-      }]
+      "Vue/no unused components": [
+        "error",
+        {
+          "ignoreWhenBindingPresent": true
+        }
+      ]
     }
   },
   "browserslist": [

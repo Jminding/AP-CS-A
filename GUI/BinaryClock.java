@@ -1,5 +1,5 @@
-import java.awt.*;
 import javax.swing.*;
+import java.awt.*;
 
 public class BinaryClock {
     public static void main(String[] args) {
@@ -11,7 +11,7 @@ public class BinaryClock {
         int height = (int) screenSize.getHeight();
         theGUI.setSize(width, height);
         theGUI.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        
+
         Container pane = theGUI.getContentPane();
         BinaryClockColorPanel panel = new BinaryClockColorPanel();
         pane.add(panel);

@@ -1,7 +1,8 @@
 import javax.swing.*;
 import java.awt.*;
 import java.text.SimpleDateFormat;
-import java.util.*;
+import java.util.Date;
+import java.util.Random;
 
 public class GUIArt {
     public static void main(String[] args) {
@@ -9,7 +10,7 @@ public class GUIArt {
         theGUI.setTitle("Broken Clock");
         theGUI.setSize(500, 500);
         theGUI.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        
+
         Container pane = theGUI.getContentPane();
         Draw draw = new Draw(Color.blue);
         pane.add(draw);
@@ -25,6 +26,7 @@ class Draw extends JPanel {
     public Draw(Color c) {
         setBackground(c);
     }
+
     public void paint(Graphics g) {
         SimpleDateFormat formatter = new SimpleDateFormat("HH:mm:ss");
         Date date = new Date();
@@ -36,8 +38,7 @@ class Draw extends JPanel {
         for (int i = 0; i < 3; i++) {
             if (times2[i] < 10) {
                 times[i] = "0" + Integer.toString(times2[i]);
-            }
-            else times[i] = Integer.toString(times2[i]);
+            } else times[i] = Integer.toString(times2[i]);
         }
         Font font = new Font("Arial", Font.BOLD, 80);
         Color colors[] = {Color.black, Color.blue, Color.cyan, Color.darkGray, Color.gray, Color.lightGray, Color.magenta, Color.orange, Color.pink, Color.red, Color.white, Color.yellow};

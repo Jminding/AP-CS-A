@@ -1,21 +1,31 @@
-import java.awt.*;
+import javax.imageio.ImageIO;
 import javax.swing.*;
-import javax.imageio.*; // For reading in the image
-import java.io.*; // For creating a new Image File class
-import java.util.*; // For the Date class
-import java.text.SimpleDateFormat; // For the SimpleDateFormat class
+import java.awt.*;
+import java.io.File;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class BinaryClockColorPanel extends JPanel {
+    /**
+     * @param num
+     * @return num but in a six-digit binary string
+     * This function converts the number into a six-digit binary number
+     * Six digits because there's 32, 16, 8, 4, 2, and 1
+     */
+    public static String toBinary(int num) {
+        return "0".repeat(6 - Integer.toBinaryString(num).length() + 1) + Integer.toBinaryString(num);
+    }
+
     public void paint(Graphics g) {
         super.paintComponent(g);
         Image img = null;
 
-        try {    
+        try {
             img = ImageIO.read(new File("background.jpg")); // Make sure that background.jpg is in the same directory
         } catch (Exception e) {
             System.out.println(e.toString());
         }
-        
+
         g.drawImage(img, 0, 0, null);
 
         Font font = new Font("Open Sans", Font.BOLD, 50);
@@ -33,7 +43,7 @@ public class BinaryClockColorPanel extends JPanel {
         g.drawString("Minutes", width - 300, 375);
         g.setColor(Color.white);
         g.drawString("Seconds", width - 300, 500);
-        
+
         String binh, binm, bins;
         SimpleDateFormat formatter = new SimpleDateFormat("HH:mm:ss"); // I used SimpleDateFormat because GregorianCalendar wasn't working for some reason
         Date date = new Date();
@@ -94,18 +104,8 @@ public class BinaryClockColorPanel extends JPanel {
         String hour = h < 10 ? "0" + Integer.toString(h) : Integer.toString(h);
         String minute = m < 10 ? "0" + Integer.toString(m) : Integer.toString(m);
         String second = s < 10 ? "0" + Integer.toString(s) : Integer.toString(s);
-        
+
         g.drawString(String.format("%s:%s:%s", hour, minute, second), 150, 725);
         g.drawString(String.format("%s:%s:%s", Integer.parseInt(hour) % 12, minute, second), 150, 800);
-    }
-    
-    /**
-     * @param num
-     * @return num but in a six-digit binary string
-     * This function converts the number into a six-digit binary number
-     * Six digits because there's 32, 16, 8, 4, 2, and 1
-     */
-    public static String toBinary(int num) {
-        return "0".repeat(6 - Integer.toBinaryString(num).length() + 1) + Integer.toBinaryString(num);
     }
 }
