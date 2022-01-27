@@ -8,7 +8,9 @@ public class ArrayRemove {
     }
 
     public static void remove(int pos) {
-        if (a.length - 1 - pos >= 0) System.arraycopy(a, pos + 1, a, pos, a.length - 1 - pos);
-        a[a.length - 1] = null;
+        String[] temp = new String[a.length - 1];
+        if (pos >= 0) System.arraycopy(a, 0, temp, 0, pos);
+        if (a.length - 1 - pos >= 0) System.arraycopy(a, pos + 1, temp, pos, a.length - 1 - pos);
+        a = temp;
     }
 }

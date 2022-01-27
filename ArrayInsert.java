@@ -1,5 +1,5 @@
 public class ArrayInsert {
-    public static String[] arr = {"A", "B", "C", "D", "E", "F", "G", null, null};
+    public static String[] arr = {"A", "B", "C", "D", "E", "F", "G"};
 
     public static void main(String[] args) {
         insert("Sus", 5);
@@ -8,7 +8,14 @@ public class ArrayInsert {
     }
 
     public static void insert(String word, int pos) {
-        if (arr.length - 1 - pos >= 0) System.arraycopy(arr, pos, arr, pos + 1, arr.length - 1 - pos);
-        arr[pos] = word;
+        String[] temp = new String[arr.length + 1];
+        for (int i = 0; i < pos; i++) {
+            temp[i] = arr[i];
+        }
+        temp[pos] = word;
+        for (int i = pos + 1; i < arr.length + 1; i++) {
+            temp[i] = arr[i - 1];
+        }
+        arr = temp;
     }
 }
