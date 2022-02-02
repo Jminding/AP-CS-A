@@ -1,0 +1,9 @@
+#BlueJ class context
+comment0.target=Student
+comment1.params=initName\ initId\ initGrade
+comment1.target=Student(java.lang.String,\ int,\ double)
+comment2.params=
+comment2.target=Student()
+comment3.params=score
+comment3.target=void\ addGrade(double)
+numComments=4

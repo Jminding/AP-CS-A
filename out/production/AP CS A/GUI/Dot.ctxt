@@ -1,0 +1,9 @@
+#BlueJ class context
+comment0.target=Dot
+comment1.params=w\ h\ initX\ initY\ radius
+comment1.target=Dot(int,\ int,\ int,\ int,\ int)
+comment2.params=g
+comment2.target=void\ draw(java.awt.Graphics)
+comment3.params=
+comment3.target=void\ update()
+numComments=4
