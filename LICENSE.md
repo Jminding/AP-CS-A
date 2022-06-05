@@ -1,4 +1,3 @@
 # LICENSE
 
-You may not directly copy this code, but you may copy certain portions as long as credit is given to the original author
-of the code and it is modified to an extent that the code would not be considered to be similar.
+You may not plaigarize this code for your AP Computer Science A class. You may, however, be "inspired" by this code and gain ideas about what you might do from it.
